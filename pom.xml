@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.s3groupinc</groupId>
     <artifactId>VersioningDemo</artifactId>
-    <version>1.5-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
 
     <name>giv</name>
     <!-- FIXME change it to the project's website -->
@@ -71,18 +72,18 @@
                     </executions>
                 </plugin>
 
-              <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.3</version>
-                <configuration>
-                  <goals>pre-integration-test</goals>
-                  <preparationGoals>package</preparationGoals>
-                  <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
-                  <tagNameFormat>@{project.version}</tagNameFormat>
-                  <remoteTagging>true</remoteTagging>
-                </configuration>
-              </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
+                    <configuration>
+                        <goals>pre-integration-test</goals>
+                        <preparationGoals>package</preparationGoals>
+                        <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
+                        <tagNameFormat>v@{project.version}</tagNameFormat>
+                        <remoteTagging>true</remoteTagging>
+                    </configuration>
+                </plugin>
 
                 <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
                 <plugin>
@@ -102,10 +103,10 @@
                     <version>3.0.2</version>
                     <configuration>
                         <archive>
-                        <manifest>
-                            <!-- give full qualified name of your main class-->
-                            <mainClass>com.s3groupinc.VersioningDemo</mainClass>
-                        </manifest>
+                            <manifest>
+                                <!-- give full qualified name of your main class-->
+                                <mainClass>com.s3groupinc.VersioningDemo</mainClass>
+                            </manifest>
                         </archive>
                     </configuration>
                 </plugin>
