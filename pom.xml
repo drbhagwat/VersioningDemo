@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.s3groupinc</groupId>
     <artifactId>VersioningDemo</artifactId>
+    <packaging>jar</packaging>
     <version>1.7-SNAPSHOT</version>
-
     <name>giv</name>
     <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
+    <url>https://github.com:drbhagwat/</url>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -19,6 +19,7 @@
         <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
         <project.resources.sourceEncoding>${encoding}</project.resources.sourceEncoding>
         <archetype.encoding>${encoding}</archetype.encoding>
+        <junit.version>4.11</junit.version>
     </properties>
 
     <scm>
@@ -33,12 +34,13 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
+        <!--        <finalName>VersioningDemo</finalName>-->
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
@@ -50,13 +52,22 @@
                 <plugin>
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>3.2.0</version>
+
                     <configuration>
+                        <!-- get all project dependencies -->
                         <descriptorRefs>
                             <descriptorRef>jar-with-dependencies</descriptorRef>
                         </descriptorRefs>
+                        <!-- MainClass in mainfest make a executable jar -->
+                        <archive>
+                            <manifest>
+                                <mainClass>com.s3groupinc.VersioningDemo</mainClass>
+                            </manifest>
+                        </archive>
                     </configuration>
                     <executions>
                         <execution>
+                            <id>make-assembly</id>
                             <phase>package</phase>
                             <goals>
                                 <goal>single</goal>
