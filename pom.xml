@@ -27,8 +27,8 @@
         <developerConnection>scm:git:https://github.com/drbhagwat/VersioningDemo.git</developerConnection>
         <url>https://github.com:drbhagwat/VersioningDemo</url>
         <tag>v@{project.version}</tag>
-
     </scm>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -51,20 +51,12 @@
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>3.2.0</version>
                     <configuration>
-                        <archive>
-                            <manifest>
-                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                                <mainClass>com.s3groupinc.VersioningDemo</mainClass>
-                            </manifest>
-                        </archive>
                         <descriptorRefs>
                             <descriptorRef>jar-with-dependencies</descriptorRef>
                         </descriptorRefs>
                     </configuration>
                     <executions>
                         <execution>
-                            <id>make-assembly</id>
                             <phase>package</phase>
                             <goals>
                                 <goal>single</goal>
@@ -105,7 +97,8 @@
                     <configuration>
                         <archive>
                             <manifest>
-                                <!-- give full qualified name of your main class-->
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                                 <mainClass>com.s3groupinc.VersioningDemo</mainClass>
                             </manifest>
                         </archive>
