@@ -5,7 +5,7 @@
     <groupId>com.s3groupinc</groupId>
     <artifactId>VersioningDemo</artifactId>
     <packaging>jar</packaging>
-    <version>1.2.3.0-${build.number}</version>
+    <version>1.2.3.0</version>
     <name>giv</name>
     <!-- FIXME change it to the project's website -->
     <url>https://github.com:drbhagwat/</url>
@@ -27,7 +27,7 @@
         <connection>scm:git:https://github.com/drbhagwat/VersioningDemo.git</connection>
         <developerConnection>scm:git:https://github.com/drbhagwat/VersioningDemo.git</developerConnection>
         <url>https://github.com:drbhagwat/VersioningDemo</url>
-        <tag>v@{project.version}</tag>
+        <tag>v1.2.3.0</tag>
     </scm>
 
     <dependencies>
