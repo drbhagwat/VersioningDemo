@@ -5,7 +5,7 @@
 
     <groupId>com.s3groupinc</groupId>
     <artifactId>VersioningDemo</artifactId>
-    <version>1.5</version>
+    <version>1.6-SNAPSHOT</version>
 
     <name>giv</name>
     <!-- FIXME change it to the project's website -->
@@ -26,7 +26,7 @@
         <connection>scm:git:https://github.com/drbhagwat/VersioningDemo.git</connection>
         <developerConnection>scm:git:https://github.com/drbhagwat/VersioningDemo.git</developerConnection>
         <url>https://github.com:drbhagwat/VersioningDemo</url>
-        <tag>v1.5</tag>
+        <tag>v@{project.version}</tag>
 
     </scm>
     <dependencies>
