@@ -5,7 +5,7 @@
     <groupId>com.s3groupinc</groupId>
     <artifactId>VersioningDemo</artifactId>
     <packaging>jar</packaging>
-    <version>1.2.3.1.1-SNAPSHOT</version>
+    <version>${build_number}</version>
     <name>giv</name>
     <!-- FIXME change it to the project's website -->
     <url>https://github.com:drbhagwat/</url>
