@@ -5,7 +5,7 @@
     <groupId>com.s3groupinc</groupId>
     <artifactId>VersioningDemo</artifactId>
     <packaging>jar</packaging>
-    <version>${build_number}</version>
+    <version>1.2.3.0-${build.number}</version>
     <name>giv</name>
     <!-- FIXME change it to the project's website -->
     <url>https://github.com:drbhagwat/</url>
@@ -19,6 +19,7 @@
         <project.resources.sourceEncoding>${encoding}</project.resources.sourceEncoding>
         <archetype.encoding>${encoding}</archetype.encoding>
         <junit.version>4.11</junit.version>
+        <build.number>SNAPSHOT</build.number>
     </properties>
 
     <scm>
@@ -111,6 +112,11 @@
                                 <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                                 <mainClass>com.s3groupinc.VersioningDemo</mainClass>
                             </manifest>
+                            <manifestEntries>
+                                <Specification-Title>${project.name}</Specification-Title>
+                                <Specification-Version>${project.version}</Specification-Version>
+                                <Implementation-Version>${build.number}</Implementation-Version>
+                            </manifestEntries>
                         </archive>
                     </configuration>
                 </plugin>
